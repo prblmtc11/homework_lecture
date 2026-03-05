@@ -65,3 +65,20 @@ void arrayToList(const T* arr, int size,
         pushBack(head, tail, arr[i]);
     }
 }
+
+int main() {
+    char arr[] = {'A', 'B', 'C', 'D'};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    BiList<char>* head = nullptr;
+    BiList<char>* tail = nullptr;
+
+    arrayToList(arr, size, head, tail);
+
+    printForward(head);
+    printBackward(tail);
+
+    freeList(head, tail);
+
+    return 0;
+}
