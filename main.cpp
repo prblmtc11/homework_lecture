@@ -56,3 +56,12 @@ void printBackward(BiList<T>* tail) {
     }
     std::cout << "\n";
 }
+
+template<class T>
+void arrayToList(const T* arr, int size,
+                 BiList<T>*& head, BiList<T>*& tail) {
+    head = tail = nullptr;
+    for (int i = 0; i < size; ++i) {
+        pushBack(head, tail, arr[i]);
+    }
+}
